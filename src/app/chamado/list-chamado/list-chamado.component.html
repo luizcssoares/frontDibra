@@ -1,0 +1,34 @@
+<div class="container">                  
+
+    <button class="btn btn-success" (click)="addChamado()"> Novo </button>
+    <table class="table table-striped table-hover">   
+        <thead>
+            <tr>
+              <th>Id</th>  
+              <th>Descricao</th>
+              <th>Autorizacao</th>
+              <th>Encerramento</th> 
+              <th></th>                    
+            </tr>
+        </thead>
+        <tbody>  
+            <tr *ngFor="let chamado of chamados">
+              <td>{{chamado.id}}</td>
+              <td>{{chamado.descricao}}</td>
+              <td>{{chamado.dtabertura}}</td>                     
+              <td>{{chamado.dtencerramento}}</td>                     
+              <td>          
+                  <button type="button" class="btn btn-danger" (click)="deleteChamdo(chamado)">
+                    <span class="glyphicon glyphicon-trash"></span>
+                  </button>                                         
+              </td>
+              <td>
+                  <button type="button" class="btn btn-success" (click)="editChamado(chamado)">                                    
+                    <span class="glyphicon glyphicon-pencil"></span>
+                  </button>                      
+              </td>                  
+            </tr>                   
+        </tbody>
+    </table>      
+
+</div>
